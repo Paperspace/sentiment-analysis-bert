@@ -27,7 +27,7 @@ def predict(request: SentimentRequest, model: Model = Depends(get_model)):
         sentiment=sentiment, confidence=confidence, probabilities=probabilities
     )
 
-@api.get("/", response_model=HeartbeatResult)
+@app.get("/", response_model=HeartbeatResult)
 def get_heartbeat()-> HeartbeatResult:
     heartbeat = HeartbeatResult(is_alive=True)
     return heartbeat
