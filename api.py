@@ -2,7 +2,7 @@ from typing import Dict
 import uvicorn
 from fastapi import Depends, FastAPI
 from pydantic import BaseModel
-
+import os
 from model import Model, get_model
 
 #app = FastAPI()
