@@ -17,6 +17,8 @@ class SentimentResponse(BaseModel):
     sentiment: str
     confidence: float
 
+class HeartbeatResult(BaseModel):
+    is_alive: bool
 
 @app.post("/predict", response_model=SentimentResponse)
 def predict(request: SentimentRequest, model: Model = Depends(get_model)):
@@ -25,6 +27,10 @@ def predict(request: SentimentRequest, model: Model = Depends(get_model)):
         sentiment=sentiment, confidence=confidence, probabilities=probabilities
     )
 
+@api.get("/", response_model=HeartbeatResult)
+def get_heartbeat()-> HeartbeatResult:
+    heartbeat = HeartbeatResult(is_alive=True)
+    return heartbeat
 
 if __name__ == "__main__":
     uvicorn.run(app, log_level="info")
