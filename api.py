@@ -6,7 +6,7 @@ import os
 from model import Model, get_model
 
 #app = FastAPI()
-app = FastAPI(openai_prefix='/model-serving/'+os.getenv("HOSTNAME").split('-')[0])
+app = FastAPI(openapi_prefix='/model-serving/'+os.getenv("HOSTNAME").split('-')[0])
 
 class SentimentRequest(BaseModel):
     text: str
