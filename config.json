@@ -1,6 +1,6 @@
 {
     "BERT_MODEL": "bert-base-cased",
-    "PRE_TRAINED_MODEL": "/storage/gradient-onboarding/deployment/models/best_model_state.bin",
+    "PRE_TRAINED_MODEL": "/models/upload/best_model_state.bin",
     "CLASS_NAMES": [
         "negative",
         "neutral",
